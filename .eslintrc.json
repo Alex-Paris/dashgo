@@ -7,7 +7,8 @@
     "eslint:recommended",
     "next/core-web-vitals",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -19,10 +20,12 @@
   },
   "plugins": [
     "react",
+    "prettier",
     "@typescript-eslint"
   ],
   "rules": {
     "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
     "indent": [
       "error",
       2

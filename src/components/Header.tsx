@@ -1,5 +1,9 @@
 import { Avatar, Box, Flex, HStack, Icon, Input, Text } from '@chakra-ui/react';
-import { RiNotificationLine, RiSearchLine, RiUserAddLine } from 'react-icons/ri'
+import {
+  RiNotificationLine,
+  RiSearchLine,
+  RiUserAddLine,
+} from 'react-icons/ri';
 
 export default function Header(): JSX.Element {
   return (
@@ -13,14 +17,11 @@ export default function Header(): JSX.Element {
       px="6"
       align="center"
     >
-      <Text
-        fontSize="3xl"
-        fontWeight="bold"
-        letterSpacing="tight"
-        w="64"
-      >
+      <Text fontSize="3xl" fontWeight="bold" letterSpacing="tight" w="64">
         dashgo
-        <Text as="span" ml="1" color="pink.500">.</Text>
+        <Text as="span" ml="1" color="pink.500">
+          .
+        </Text>
       </Text>
 
       <Flex
@@ -48,10 +49,7 @@ export default function Header(): JSX.Element {
         <Icon as={RiSearchLine} fontSize="20" />
       </Flex>
 
-      <Flex
-        align="center"
-        ml="auto"
-      >
+      <Flex align="center" ml="auto">
         <HStack
           spacing="8"
           mx="8"

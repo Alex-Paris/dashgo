@@ -1,4 +1,8 @@
-import { useQuery } from '@tanstack/react-query';
+import {
+  useQuery,
+  UseQueryOptions,
+  UseQueryResult,
+} from '@tanstack/react-query';
 import { api } from '../api';
 
 type Users = {
@@ -34,12 +38,13 @@ export async function getUsers(page: number): Promise<GetUsersResponse> {
   return { users, totalCount };
 }
 
-export function useUsers(page: number) {
+export function useUsers(page: number, options?: UseQueryOptions) {
   // Important: if the key forneced would be used in a different query,
   // likely a pagination (lots of page with different results), you MUST
   // consider setting a second key so useQuery will not use the same result for
   // every page.
   return useQuery(['users', page], () => getUsers(page), {
     staleTime: 1000 * 60 * 10, // 10 minutes
-  });
+    ...options,
+  }) as UseQueryResult<GetUsersResponse, unknown>;
 }

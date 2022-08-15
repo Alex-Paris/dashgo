@@ -40,6 +40,6 @@ export function useUsers(page: number) {
   // consider setting a second key so useQuery will not use the same result for
   // every page.
   return useQuery(['users', page], () => getUsers(page), {
-    staleTime: 1000 * 60,
+    staleTime: 1000 * 60 * 10, // 10 minutes
   });
 }
